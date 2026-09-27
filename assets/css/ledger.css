@@ -1,0 +1,158 @@
+/* Design D: Ledger. Black on warm paper, hairline rules, a case-register motif.
+   No colour anywhere except pure black/white/greys — the "register number" and
+   tab markers do the work a colour accent would otherwise do. */
+:root {
+  --paper: #FAF9F6; --ink: #111111; --muted: #55504A; --line: #D8D3CB; --line-strong: #111111;
+  --tab: #111111; --tab-text: #FAF9F6;
+  --modal-radius: 0px; --focus: #111111;
+  --logo-mark: var(--ink); --logo-word: var(--ink); --logo-sub: var(--muted);
+}
+body { background: var(--paper); color: var(--ink); }
+h1, h2, h3 { font-family: "Source Serif 4", "Playfair Display", Georgia, serif; font-weight: 600; letter-spacing: -.01em; }
+a { color: var(--ink); }
+a:hover { color: var(--muted); }
+::selection { background: var(--ink); color: var(--paper); }
+
+.notice-bar { background: var(--ink); color: var(--paper); font-size: 13px; text-align: center; padding: 9px var(--gutter); letter-spacing: .01em; }
+.notice-bar a { color: var(--paper); text-decoration: underline; }
+
+/* Masthead */
+.masthead { border-bottom: 3px double var(--ink); }
+.masthead-top { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--line); }
+.masthead-main { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 28px 0; }
+.logo-word { font-family: "Source Serif 4", Georgia, serif; }
+.nav { display: flex; align-items: center; gap: 34px; font-size: 14px; letter-spacing: .01em; }
+.nav a { text-decoration: none; padding-bottom: 3px; border-bottom: 1px solid transparent; }
+.nav a:hover { border-color: var(--ink); }
+.nav a[aria-current="page"] { border-color: var(--ink); font-weight: 600; }
+.nav-toggle { color: var(--ink); border-radius: 0; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 0 26px; border: 1px solid var(--ink); font-size: 14px; letter-spacing: .04em; text-transform: uppercase; text-decoration: none; cursor: pointer; background: transparent; color: var(--ink); border-radius: 0; }
+.btn-fill { background: var(--ink); color: var(--paper); }
+.btn-fill:hover { background: #000; color: var(--paper); }
+.btn:hover:not(.btn-fill) { background: var(--ink); color: var(--paper); }
+
+/* Hero: a "case register" strip on the left, headline on the right */
+.hero { padding: clamp(40px, 6vw, 72px) 0 clamp(56px, 7vw, 96px); border-bottom: 1px solid var(--line); }
+.hero-grid { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: clamp(28px, 4vw, 56px); }
+.register { border-right: 1px solid var(--line); padding-right: clamp(20px, 3vw, 40px); display: flex; flex-direction: column; gap: 22px; }
+.register .reg-no { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.register dl { display: flex; flex-direction: column; gap: 14px; font-size: 13px; }
+.register dt { text-transform: uppercase; letter-spacing: .07em; color: var(--muted); }
+.register dd { margin: 4px 0 0; font-size: 15px; }
+.hero-main .kicker { font-size: 13px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+.hero-main h1 { font-size: clamp(38px, 5.6vw, 68px); line-height: 1.06; margin-top: 14px; max-width: 15ch; }
+.hero-main .lead { font-family: "Source Serif 4", Georgia, serif; font-size: clamp(18px, 1.7vw, 21px); line-height: 1.65; max-width: 620px; margin-top: 22px; color: #2B2723; }
+.btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+
+/* Sections */
+.section { padding: clamp(56px, 7vw, 96px) 0; border-bottom: 1px solid var(--line); }
+.section-head { display: flex; justify-content: space-between; align-items: baseline; gap: 20px 48px; flex-wrap: wrap; margin-bottom: clamp(32px, 4vw, 52px); }
+.section-head .tab { display: inline-flex; align-items: center; height: 26px; padding: 0 10px; background: var(--tab); color: var(--tab-text); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 10px; }
+.section-head h2 { font-size: clamp(30px, 3.6vw, 44px); line-height: 1.1; }
+.section-head p { max-width: 420px; font-size: 15px; line-height: 1.7; color: var(--muted); }
+
+/* Principles as a numbered ledger list */
+.principles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.principles > div { border-top: 1px solid var(--ink); padding-top: 22px; display: flex; flex-direction: column; gap: 12px; }
+.principles > div + div { margin-left: clamp(16px, 3vw, 40px); }
+.p-num { font-family: "Source Serif 4", Georgia, serif; font-size: 13px; letter-spacing: .06em; color: var(--muted); }
+.principles h3 { font-size: 22px; }
+.principles p { font-size: 15px; line-height: 1.7; color: var(--muted); }
+
+/* Practice list: table-like rows */
+.cards { display: flex; flex-direction: column; border-top: 1px solid var(--ink); }
+.cards .card { display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: 8px 28px; padding: 26px 0; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink); align-items: baseline; }
+.cards .card:hover .card-title { text-decoration: underline; }
+.card-num { font-family: "Source Serif 4", Georgia, serif; font-size: 14px; color: var(--muted); }
+.card-title { font-family: "Source Serif 4", Georgia, serif; font-size: 22px; font-weight: 600; grid-column: 2; }
+.card-desc { grid-column: 2; font-size: 14px; line-height: 1.7; color: var(--muted); }
+
+/* Firm band */
+.firm { background: var(--ink); color: var(--paper); padding: clamp(56px, 7vw, 96px) 0; }
+.firm-grid { display: grid; grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr); gap: clamp(32px, 6vw, 80px); align-items: start; }
+.firm .big-mark { width: 100%; max-width: 220px; fill: #333; }
+.firm .kicker { font-size: 13px; text-transform: uppercase; letter-spacing: .1em; color: #999; }
+.firm h2 { font-size: clamp(30px, 3.6vw, 44px); margin-top: 16px; }
+.firm p.body { font-family: "Source Serif 4", Georgia, serif; font-size: 17px; line-height: 1.8; color: #E6E3DE; max-width: 620px; margin-top: 18px; }
+.firm-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 30px; padding-top: 24px; border-top: 1px solid #444; max-width: 500px; }
+.firm-facts div { display: flex; flex-direction: column; gap: 4px; }
+.firm-facts .num { font-family: "Source Serif 4", Georgia, serif; font-size: 26px; }
+.firm-facts span:last-child { font-size: 13px; color: #999; }
+
+/* Steps as a docket */
+.steps { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--ink); }
+.steps li { padding: 22px clamp(12px, 2vw, 28px) 0 0; display: flex; flex-direction: column; gap: 10px; }
+.steps li + li { border-left: 1px solid var(--line); padding-left: clamp(12px, 2vw, 28px); }
+.steps .num { font-family: "Source Serif 4", Georgia, serif; font-size: 13px; color: var(--muted); }
+.steps strong { font-size: 18px; }
+.steps p { font-size: 14px; line-height: 1.7; color: var(--muted); }
+
+/* CTA */
+.cta-box { border: 1px solid var(--ink); padding: clamp(32px, 5vw, 64px); display: flex; align-items: center; justify-content: space-between; gap: 24px 48px; flex-wrap: wrap; }
+.cta-box h2 { font-size: clamp(26px, 3.2vw, 36px); }
+.cta-box p { font-family: "Source Serif 4", Georgia, serif; font-size: 15px; line-height: 1.7; color: var(--muted); max-width: 460px; margin-top: 10px; }
+
+/* Footer */
+.site-footer { background: var(--paper); color: var(--ink); padding: 56px 0 32px; border-top: 3px double var(--ink); }
+.footer-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr)); gap: 40px; font-size: 14px; line-height: 1.7; }
+.footer-grid > div, .footer-grid > nav { display: flex; flex-direction: column; gap: 8px; }
+.footer-grid strong { text-transform: uppercase; letter-spacing: .06em; font-size: 12px; color: var(--muted); }
+.footer-grid a { color: var(--ink); text-decoration: none; }
+.footer-grid a:hover { text-decoration: underline; }
+.footer-legal { border-top: 1px solid var(--line); margin-top: 36px; padding-top: 20px; font-size: 12px; line-height: 1.7; color: var(--muted); }
+.footer-legal p { max-width: 1000px; }
+
+/* Practice page */
+.page-hero { border-bottom: 1px solid var(--ink); padding: clamp(40px, 5vw, 64px) 0 clamp(48px, 6vw, 72px); }
+.breadcrumb { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); display: flex; gap: 10px; }
+.page-hero h1 { font-size: clamp(38px, 5vw, 58px); margin-top: 18px; }
+.page-hero p { font-family: "Source Serif 4", Georgia, serif; font-size: 17px; line-height: 1.75; color: #2B2723; max-width: 620px; margin-top: 16px; }
+.area { display: grid; grid-template-columns: 90px minmax(0, .9fr) minmax(0, 1.1fr) minmax(0, 1fr); gap: 16px 32px; padding: 40px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+.area .card-num { grid-row: 1; }
+.area h2 { font-size: 26px; grid-column: 2; }
+.area p { font-size: 15px; line-height: 1.75; color: var(--muted); grid-column: 3; }
+.area .handles { font-size: 14px; line-height: 1.8; grid-column: 4; }
+.area .handles strong { display: block; text-transform: uppercase; letter-spacing: .05em; font-size: 11px; color: var(--muted); font-weight: 600; margin-bottom: 4px; }
+
+/* Contact page */
+.contact-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: clamp(32px, 5vw, 64px); align-items: start; }
+.contact-intro h1 { font-size: clamp(34px, 4.4vw, 50px); line-height: 1.1; margin-top: 18px; }
+.form-card { margin-top: 32px; border-top: 1px solid var(--ink); padding-top: 32px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field.full { grid-column: 1 / -1; }
+.field label { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.field input, .field select, .field textarea { min-height: 46px; padding: 0 4px; border: none; border-bottom: 1px solid var(--line); background: transparent; font-size: 15px; border-radius: 0; }
+.field input:focus, .field select:focus, .field textarea:focus { border-bottom-color: var(--ink); }
+.field textarea { padding: 8px 4px; line-height: 1.6; resize: vertical; min-height: 100px; }
+.check { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.6; color: var(--muted); }
+.check input { width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--ink); flex-shrink: 0; }
+.office-card { border: 1px solid var(--ink); padding: 32px; display: flex; flex-direction: column; gap: 20px; }
+.office-card h2 { font-size: 24px; }
+.office-card div { display: flex; flex-direction: column; gap: 4px; font-size: 14px; line-height: 1.6; }
+.office-card strong { text-transform: uppercase; letter-spacing: .06em; font-size: 11px; color: var(--muted); }
+.map-ph { height: 240px; border: 1px solid var(--line); color: var(--muted); margin-top: 20px; font-size: 13px; }
+
+@media (max-width: 1100px) {
+  .nav-toggle { display: inline-flex; }
+  .nav { display: none; position: absolute; left: 0; right: 0; top: 100%; z-index: 50; background: var(--paper); border-bottom: 1px solid var(--ink); flex-direction: column; align-items: stretch; gap: 0; padding: 4px var(--gutter) 20px; }
+  .masthead.nav-open .nav { display: flex; }
+  .masthead { position: relative; }
+  .nav a { padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .nav .btn { margin-top: 14px; }
+  .hero-grid, .firm-grid, .contact-grid { grid-template-columns: minmax(0, 1fr); }
+  .register { border-right: 0; border-bottom: 1px solid var(--line); padding-right: 0; padding-bottom: 24px; flex-direction: row; flex-wrap: wrap; gap: 24px 40px; }
+  .register dl { flex-direction: row; flex-wrap: wrap; gap: 16px 32px; }
+  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .steps li:nth-child(2n+1) { border-left: 0; padding-left: 0; }
+  .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 700px) {
+  .principles { grid-template-columns: minmax(0, 1fr); }
+  .principles > div + div { margin-left: 0; }
+  .area { grid-template-columns: minmax(0, 1fr); }
+  .area h2, .area p, .area .handles { grid-column: 1; }
+  .steps { grid-template-columns: minmax(0, 1fr); }
+  .steps li { border-left: 0 !important; padding-left: 0 !important; border-top: 1px solid var(--line); }
+  .form-card, .footer-grid { grid-template-columns: minmax(0, 1fr); }
+  .masthead-top { flex-direction: column; gap: 4px; align-items: flex-start; padding: 8px 0; }
+}
