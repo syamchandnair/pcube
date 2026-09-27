@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>P Cube Legals | Website templates</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,sans-serif;background:#F2F1EF;color:#1F1416;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px 20px}
+  .card{max-width:920px;width:100%}
+  h1{font-size:clamp(28px,4vw,40px);margin:0 0 12px}
+  p{font-size:16px;line-height:1.6;color:#5B4F51;max-width:640px;margin:0 0 36px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+  a.tile{display:block;background:#fff;border:1px solid #DDD8D6;border-radius:12px;padding:28px;text-decoration:none;color:inherit;transition:border-color .15s, transform .15s}
+  a.tile:hover{border-color:#6B0F1A;transform:translateY(-2px)}
+  a.tile strong{display:block;font-size:20px;margin-bottom:8px;color:#6B0F1A}
+  a.tile span{font-size:14px;color:#5B4F51;line-height:1.5}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>P Cube Legals — website templates</h1>
+  <p>Three complete designs. Pick one to open it; a design switcher in the top-right corner of each page lets you compare them.</p>
+  <div class="grid">
+    <a class="tile" href="heritage/index.html"><strong>A · Heritage</strong><span>Classic, established-firm look. Stone and maroon, serif headlines, shield-shaped imagery.</span></a>
+    <a class="tile" href="verdict/index.html"><strong>B · Verdict</strong><span>Bold, dark theme with a large watermark of the logo mark and a bold Outfit typeface.</span></a>
+    <a class="tile" href="counsel/index.html"><strong>C · Counsel</strong><span>Modern, client-first. Plain-language practice index, FAQ accordion, working booking flow.</span></a>
+  </div>
+</div>
+<script>
+  try {
+    var d = localStorage.getItem('pcube-design');
+    if (d && ['heritage','verdict','counsel'].indexOf(d) !== -1) {
+      document.querySelector('a[href^="' + d + '/"]').style.outline = '2px solid #B8860B';
+    }
+  } catch (e) {}
+</script>
+</body>
+</html>

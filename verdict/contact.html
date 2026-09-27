@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact | P Cube Legals</title>
+<meta name="description" content="Call, email or write to P Cube Legals.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/verdict.css">
+</head>
+<body data-design="verdict" data-page="contact">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header on-dark">
+  <div class="container header-inner">
+    <a class="logo" href="index.html" aria-label="P Cube Legals home"><svg class="mark" viewBox="0 0 100 122" aria-hidden="true"><path fill-rule="evenodd" d="M0 0H100V72A50 50 0 0 1 0 72ZM8 8H92V72A42 42 0 0 1 8 72Z"/><path d="M16 18h46v7H16zM16 30h36v5H16zM28 46h5v60h-5zM37 40h5v68h-5zM46 40h5v70h-5z"/><path fill-rule="evenodd" d="M24 38a9 9 0 1 0 .01 0ZM24 43a4 4 0 1 0 .01 0Z"/><path fill-rule="evenodd" d="M56 18H70A17 17 0 0 1 70 52H64V110H56ZM64 27V43H70A8 8 0 0 0 70 27Z"/></svg><span class="logo-text"><span class="logo-word">P CUBE</span><span class="logo-sub">LEGALS</span></span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Menu"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <nav class="nav" id="main-nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="about.html">Who we are</a>
+      <a href="index.html#practice">Practice areas</a>
+      <a class="btn" href="contact.html">Contact us</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="contact-split">
+  <div class="contact-panel">
+    <svg class="watermark" viewBox="0 0 100 122" aria-hidden="true"><path fill-rule="evenodd" d="M0 0H100V72A50 50 0 0 1 0 72ZM8 8H92V72A42 42 0 0 1 8 72Z"/><path d="M16 18h46v7H16zM16 30h36v5H16zM28 46h5v60h-5zM37 40h5v68h-5zM46 40h5v70h-5z"/><path fill-rule="evenodd" d="M24 38a9 9 0 1 0 .01 0ZM24 43a4 4 0 1 0 .01 0Z"/><path fill-rule="evenodd" d="M56 18H70A17 17 0 0 1 70 52H64V110H56ZM64 27V43H70A8 8 0 0 0 70 27Z"/></svg>
+    <h1>Let’s talk.</h1>
+    <p>Call us, write to us, or send the form. We usually respond within [one working day].</p>
+    <div class="contact-list">
+      <div><span>Phone</span><a href="tel:+910000000000">+91 [XXXXX XXXXX]</a></div>
+      <div><span>Email</span><a href="mailto:office@pcubelegals.com">office@pcubelegals.com</a></div>
+      <div><span>Office</span><p class="small">[Street address], [City, District], Kerala [PIN]</p></div>
+      <div><span>Hours</span><p class="small">Monday to Saturday, [10:00 am to 6:00 pm]</p></div>
+    </div>
+  </div>
+  <!-- To receive submissions, set action="https://formspree.io/f/XXXX" method="POST" (see README) -->
+  <form class="dark-form" data-static-form>
+    <h2>Tell us about your matter</h2>
+    <div class="field-row">
+      <div class="field"><label for="name">Full name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+      <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
+    </div>
+    <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email"></div>
+    <fieldset>
+      <legend>Area of law</legend>
+      <div class="pills">
+            <label><input type="radio" name="area" value="Civil">Civil</label>
+            <label><input type="radio" name="area" value="Criminal">Criminal</label>
+            <label><input type="radio" name="area" value="Family">Family</label>
+            <label><input type="radio" name="area" value="Property">Property</label>
+            <label><input type="radio" name="area" value="Corporate">Corporate</label>
+            <label><input type="radio" name="area" value="Consumer">Consumer</label>
+      </div>
+    </fieldset>
+    <div class="field"><label for="msg">Message</label><textarea id="msg" name="message"></textarea></div>
+    <label class="check"><input type="checkbox" name="acknowledge" required><span>I understand that sending this form does not create an advocate–client relationship.</span></label>
+    <div><button class="btn btn-light" type="submit">Send message</button></div>
+    <p class="form-status" role="status" tabindex="-1" hidden>Thank you. This form is not connected yet, so please call +91 [XXXXX XXXXX] for now.</p>
+  </form>
+</main>
+<footer class="mini-footer"><div class="container"><span>Information only, not legal advice or solicitation, as per Bar Council of India rules.</span><span>© 2026 P Cube Legals</span></div></footer>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>
